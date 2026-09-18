@@ -1,0 +1,6 @@
+{
+  "name": "Số liệu Chiến dịch 500 ngày đêm ADN Liệt sĩ",
+  "description": "Box cập nhật số liệu động về tiến độ tìm kiếm, quy tập hài cốt liệt sĩ và thu nhận mẫu ADN Liệt sĩ & Thân nhân",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
