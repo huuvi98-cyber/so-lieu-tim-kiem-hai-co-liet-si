@@ -41,9 +41,9 @@ export const INITIAL_CAMPAIGN_DATA: CampaignData = {
   totalDays: 500,
   endDateStr: '27/7/2027',
 
-  remainsFound: 1563,
+  remainsFound: 2014,
   remainsTarget: 7000,
-  remainsDomestic: 458,
+  remainsDomestic: 990,
   remainsLaos: 174,
   remainsCambodia: 850,
   massGravesFound: 7,
@@ -51,7 +51,7 @@ export const INITIAL_CAMPAIGN_DATA: CampaignData = {
   interredCount: 892,
   interredTotal: 2120,
 
-  martyrSamplesCollected: 33571,
+  martyrSamplesCollected: 37610,
   martyrSamplesTarget: 230000,
   martyrSamplesQualified: 49686,
   martyrSamplesUnqualified: 21805,
@@ -148,8 +148,8 @@ export const DynamicDataBox: React.FC = () => {
                   <MapPin className="w-4 h-4 text-white" />
                 </div>
                 <div>
-                  <h2 className="text-sm sm:text-base font-bold text-white uppercase tracking-wide">
-                    SỐ HÀI CỐT ĐÃ TÌM KIẾM, QUY TẬP
+                  <h2 className="text-sm sm:text-base font-bold text-white leading-snug">
+                    Ngày 29-8-2026: Văn phòng Ban Chỉ đạo quốc gia về tìm kiếm quy tập và xác định danh tính hài cốt liệt sĩ, các lực lượng đã tìm kiếm, quy tập được
                   </h2>
                 </div>
               </div>
@@ -161,16 +161,12 @@ export const DynamicDataBox: React.FC = () => {
                     <AnimatedCount value={data.remainsFound} duration={1600} />
                   </span>
                   <span className="text-lg sm:text-xl font-bold text-white/90">
-                    / 7.000 hài cốt ({Math.round((data.remainsFound / data.remainsTarget) * 100 * 10) / 10}%)
+                    hài cốt liệt sĩ
                   </span>
                 </div>
-                {/* Visual mini progress */}
-                <div className="w-full bg-red-950 rounded-full h-2.5 mt-3 overflow-hidden border border-red-800">
-                  <div
-                    className="bg-white h-full rounded-full transition-all duration-700"
-                    style={{ width: `${Math.min(100, (data.remainsFound / data.remainsTarget) * 100)}%` }}
-                  ></div>
-                </div>
+                <p className="mt-3 text-xs sm:text-sm text-red-100/90 leading-relaxed border-t border-red-800/60 pt-2.5">
+                  Trong đó: <strong className="text-white font-semibold">990</strong> hài cốt ở trong nước, <strong className="text-white font-semibold">174</strong> hài cốt tại Lào và <strong className="text-white font-semibold">850</strong> hài cốt tại Campuchia.
+                </p>
               </div>
             </div>
           </div>
@@ -183,8 +179,8 @@ export const DynamicDataBox: React.FC = () => {
                   <Dna className="w-4 h-4 text-white" />
                 </div>
                 <div>
-                  <h2 className="text-sm sm:text-base font-bold text-white uppercase tracking-wide">
-                    Trung tâm Giám định ADN đã tiếp nhận hơn
+                  <h2 className="text-sm sm:text-base font-bold text-white leading-snug">
+                    15-9-2026: Trung tâm Giám định ADN đã tiếp nhận, lưu trữ
                   </h2>
                 </div>
               </div>
@@ -196,23 +192,11 @@ export const DynamicDataBox: React.FC = () => {
                     <AnimatedCount value={data.martyrSamplesCollected} duration={1700} />
                   </span>
                   <span className="text-lg sm:text-xl font-bold text-white/90">
-                    mẫu hài cốt liệt sĩ
+                    mẫu hài cốt liệt sĩ từ 8 tỉnh, thành phố
                   </span>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* Box Footer Bar */}
-        <div className="bg-red-950 px-5 sm:px-7 py-3.5 border-t border-red-800 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-red-200">
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 inline-block"></span>
-            <span>Nguồn số liệu: <strong className="text-white">Bộ Quốc phòng</strong></span>
-          </div>
-
-          <div>
-            <span className="italic text-red-300">{data.lastUpdated}</span>
           </div>
         </div>
       </div>
